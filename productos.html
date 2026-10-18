@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/logo/logo-placeholder.svg" type="image/svg+xml" />
+    <title>Productos | [NOMBRE DE LA MARCA]</title>
+    <meta
+      name="description"
+      content="Explora nuestro catálogo de productos artesanales y decorativos navideños. Adornos, coronas, centros de mesa y piezas personalizables."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body data-page="products">
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="brand" aria-label="Volver a inicio">
+          <img src="img/logo/logo-placeholder.svg" alt="Logo de [NOMBRE DE LA MARCA]" class="brand__logo" />
+          <span class="brand__name">[NOMBRE DE LA MARCA]</span>
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html" class="active">Productos</a></li>
+            <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero small-hero">
+        <div class="container page-hero__content reveal">
+          <p class="eyebrow">Catálogo</p>
+          <h1>Productos artesanales para la temporada.</h1>
+        </div>
+      </section>
+
+      <section class="section section--light">
+        <div class="container">
+          <div class="catalog-controls reveal" aria-label="Controles del catálogo">
+            <label class="search-field" for="product-search">
+              <span class="sr-only">Buscar productos</span>
+              <input id="product-search" type="search" placeholder="Buscar por nombre o palabra clave" />
+            </label>
+
+            <label class="select-field" for="product-sort">
+              <span class="sr-only">Ordenar productos</span>
+              <select id="product-sort">
+                <option value="destacados">Orden recomendado</option>
+                <option value="precio-asc">Precio: menor a mayor</option>
+                <option value="precio-desc">Precio: mayor a menor</option>
+                <option value="alfabetico">Alfabético</option>
+              </select>
+            </label>
+
+            <label class="check-field">
+              <input id="available-only" type="checkbox" />
+              <span>Solo disponibles</span>
+            </label>
+
+            <label class="check-field">
+              <input id="favorites-only" type="checkbox" />
+              <span>Favoritos</span>
+            </label>
+
+            <button id="clear-filters" class="btn btn--secondary" type="button">Restablecer</button>
+          </div>
+
+          <div class="catalog-summary reveal">
+            <span id="result-count" class="result-count">0 productos</span>
+          </div>
+
+          <div id="product-grid" class="cards-grid cards-grid--catalog"></div>
+          <p id="no-products" class="empty-state" hidden>
+            No hemos encontrado productos que coincidan con tu búsqueda. Prueba con otra palabra o restablece los filtros.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Favoritos</p>
+            <h2>Productos que te han llamado la atención.</h2>
+          </div>
+          <div id="favorites-list" class="favorites-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="product-modal" class="modal" aria-hidden="true">
+      <div class="modal__backdrop" data-close-modal="true"></div>
+      <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="product-modal-title">
+        <button type="button" class="modal__close" aria-label="Cerrar personalización">×</button>
+        <h3 id="product-modal-title">Personaliza tu producto</h3>
+        <form id="product-customizer" novalidate>
+          <div id="customizer-fields"></div>
+          <div class="modal__actions">
+            <button type="button" class="btn btn--secondary" data-close-modal="true">Cancelar</button>
+            <button type="submit" class="btn btn--primary">Enviar por WhatsApp</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a href="index.html" class="brand brand--footer">
+            <img src="img/logo/logo-placeholder.svg" alt="Logo de [NOMBRE DE LA MARCA]" class="brand__logo" />
+            <span class="brand__name">[NOMBRE DE LA MARCA]</span>
+          </a>
+          <p>Manualidades y decoración navideña hechas a mano con cercanía, calidad y esencia artesanal.</p>
+        </div>
+
+        <div>
+          <h3>Navegación</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contacto</h3>
+          <ul class="footer-links">
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="https://wa.me/?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20vuestros%20productos." target="_blank" rel="noreferrer">WhatsApp</a></li>
+            <li><a href="https://instagram.com/[INSTAGRAM]" target="_blank" rel="noreferrer">Instagram</a></li>
+            <li><a href="mailto:[EMAIL]">[EMAIL]</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© <span id="year"></span> [NOMBRE DE LA MARCA]. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

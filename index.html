@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/logo/logo-placeholder.svg" type="image/svg+xml" />
+    <title>[NOMBRE DE LA MARCA] | Decoración navideña hecha a mano</title>
+    <meta
+      name="description"
+      content="Descubre la decoración navideña artesanal hecha a mano. Productos personalizados, regalos y detalles con encanto para cada hogar."
+    />
+    <meta property="og:title" content="[NOMBRE DE LA MARCA]" />
+    <meta
+      property="og:description"
+      content="Manualidades y decoración navideña hechas a mano con un toque cercano y artesanal."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#3d4f3d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body data-page="home">
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="brand" aria-label="Volver a inicio">
+          <img src="img/logo/logo-placeholder.svg" alt="Logo de [NOMBRE DE LA MARCA]" class="brand__logo" />
+          <span class="brand__name">[NOMBRE DE LA MARCA]</span>
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
+          <ul>
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero__grid">
+          <div class="hero__content reveal">
+            <p class="eyebrow">Artesanía hecha con cariño</p>
+            <h1>Decoración navideña hecha a mano.</h1>
+            <p class="hero__text">
+              Productos artesanales para dar calidez, personalidad y ese toque especial a cada hogar, regalo y celebración.
+            </p>
+            <div class="hero__actions">
+              <a href="productos.html" class="btn btn--primary">Ver productos</a>
+              <a href="contacto.html" class="btn btn--secondary">Pedir por WhatsApp</a>
+            </div>
+            <ul class="hero__highlights" aria-label="Características del negocio">
+              <li>Hecho a mano</li>
+              <li>Personalizable</li>
+              <li>Pequeño negocio artesano</li>
+            </ul>
+          </div>
+
+          <div class="hero__visual reveal">
+            <div class="hero__card hero__card--main">
+              <img src="img/productos/corona-clasica.svg" alt="Corona navideña de ejemplo" />
+            </div>
+            <div class="hero__card hero__card--mini">
+              <img src="img/productos/adorno-arbol.svg" alt="Adorno navideño de ejemplo" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--light">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Nuestra esencia</p>
+            <h2>Manualidades con personalidad para la temporada más especial.</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card reveal">
+              <div class="feature-card__icon" aria-hidden="true">✦</div>
+              <h3>Hecho a mano</h3>
+              <p>Cada pieza se crea con detalle, paciencia y cuidado artesanal para que cada trabajo sea único.</p>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-card__icon" aria-hidden="true">❄</div>
+              <h3>Navidad con estilo</h3>
+              <p>Diseños cálidos y elegantes que aportan belleza sin perder la cercanía de un pequeño taller.</p>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-card__icon" aria-hidden="true">🎁</div>
+              <h3>Regalos y detalles</h3>
+              <p>Perfectos para decorar, sorprender y regalar en fechas especiales o por puro capricho.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Productos destacados</p>
+            <h2>Ideas para comenzar a decorar la temporada.</h2>
+          </div>
+          <div id="featured-products" class="cards-grid"></div>
+        </div>
+      </section>
+
+      <section class="section section--muted">
+        <div class="container personalization">
+          <div class="personalization__content reveal">
+            <p class="eyebrow">Personalización</p>
+            <h2>Un detalle que hace que cada pieza sea especial.</h2>
+            <p>
+              Podemos adaptar tonos, materiales, tamaños y propuestas para conseguir un resultado más cercano a cada cliente o ocasión.
+            </p>
+            <p>
+              La personalización será una parte clave del proyecto, tanto para regalos como para decoración más íntima y original.
+            </p>
+            <a href="contacto.html" class="btn btn--primary">Solicitar personalización</a>
+          </div>
+
+          <div class="personalization__visual reveal">
+            <div class="mini-panel">
+              <span class="mini-panel__label">Opciones</span>
+              <ul>
+                <li>Colores</li>
+                <li>Textos</li>
+                <li>Tamaños</li>
+                <li>Temática</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Galería</p>
+            <h2>Un vistazo a la esencia artesanal.</h2>
+          </div>
+
+          <div class="gallery-preview reveal">
+            <img src="img/galeria/galeria-1.svg" alt="Detalle artesanal de una decoración navideña" />
+            <img src="img/galeria/galeria-2.svg" alt="Trabajo artesanal de un adorno decorativo" />
+            <img src="img/galeria/galeria-3.svg" alt="Preparación de un centro de mesa navideño" />
+            <img src="img/galeria/galeria-4.svg" alt="Producto handmade con temática navideña" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--light">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Testimonios</p>
+            <h2>La confianza se construye paso a paso.</h2>
+          </div>
+
+          <div class="testimonials-grid">
+            <article class="testimonial reveal">
+              <p>“Un trabajo cuidado, bonito y muy cercano. Ideal para regalar en Navidad.”</p>
+              <div class="testimonial__meta">
+                <strong>Cliente demo</strong>
+                <span>Testimonio provisional</span>
+              </div>
+            </article>
+
+            <article class="testimonial reveal">
+              <p>“Los detalles artesanales marcan la diferencia y dan un toque único a la casa.”</p>
+              <div class="testimonial__meta">
+                <strong>Cliente demo</strong>
+                <span>Testimonio provisional</span>
+              </div>
+            </article>
+
+            <article class="testimonial reveal">
+              <p>“La personalización hace que cada pieza se sienta especial y muy pensada.”</p>
+              <div class="testimonial__meta">
+                <strong>Cliente demo</strong>
+                <span>Testimonio provisional</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Recomendador</p>
+            <h2>Encuentra la pieza que mejor encaja con tu estilo.</h2>
+          </div>
+
+          <form id="product-recommend-form" class="recommender reveal" novalidate>
+            <div class="recommender__field">
+              <label for="style-choice">¿Qué estilo te gusta más?</label>
+              <select id="style-choice">
+                <option value="elegante">Elegante</option>
+                <option value="rustico">Rústico</option>
+                <option value="moderno">Moderno</option>
+                <option value="calido">Cálido</option>
+              </select>
+            </div>
+
+            <div class="recommender__field">
+              <label for="budget-choice">¿Cuál es tu presupuesto aproximado?</label>
+              <select id="budget-choice">
+                <option value="20">Hasta 20 €</option>
+                <option value="35">Hasta 35 €</option>
+                <option value="50">Hasta 50 €</option>
+                <option value="100">Hasta 100 €</option>
+              </select>
+            </div>
+
+            <div class="recommender__field">
+              <label for="occasion-choice">¿Para qué lo buscas?</label>
+              <select id="occasion-choice">
+                <option value="casa">Decorar mi casa</option>
+                <option value="arbol">Decorar el árbol</option>
+                <option value="regalo">Regalar</option>
+                <option value="personalizado">Algo personalizado</option>
+              </select>
+            </div>
+
+            <div class="recommender__actions">
+              <button type="submit" class="btn btn--primary">Recomiéndame</button>
+              <button type="reset" class="btn btn--secondary">Reiniciar</button>
+            </div>
+          </form>
+
+          <div id="recommendation-results" class="recommendation-results"></div>
+        </div>
+      </section>
+
+      <section class="section section--light">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">FAQ</p>
+            <h2>Preguntas frecuentes.</h2>
+          </div>
+
+          <div class="faq-list reveal">
+            <article class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                ¿Cómo puedo realizar un pedido?
+              </button>
+              <div class="faq-answer">
+                <p>Se puede consultar disponibilidad y detalles directamente por WhatsApp o a través del formulario de contacto.</p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                ¿Se pueden personalizar los productos?
+              </button>
+              <div class="faq-answer">
+                <p>Muchas piezas admiten personalización y se pueden adaptar según el gusto, colores, textos o temática. Este dato dependerá del producto concreto.</p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                ¿Cuánto tarda la preparación?
+              </button>
+              <div class="faq-answer">
+                <p>El plazo de preparación dependerá del tipo de producto, la época del año y la personalización. Se puede consultar en cada caso por WhatsApp.</p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                ¿Se realizan envíos?
+              </button>
+              <div class="faq-answer">
+                <p>La opción de envío dependerá del proyecto y la zona de entrega. Está preparada para confirmarse con el cliente según el caso.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section CTA">
+        <div class="container CTA__content reveal">
+          <div>
+            <p class="eyebrow">¿Te gusta lo que ves?</p>
+            <h2>Haz realidad tu rincón navideño con un toque artesanal.</h2>
+          </div>
+          <a href="contacto.html" class="btn btn--primary">Solicitar información</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a href="index.html" class="brand brand--footer">
+            <img src="img/logo/logo-placeholder.svg" alt="Logo de [NOMBRE DE LA MARCA]" class="brand__logo" />
+            <span class="brand__name">[NOMBRE DE LA MARCA]</span>
+          </a>
+          <p>Manualidades y decoración navideña hechas a mano con cercanía, calidad y esencia artesanal.</p>
+        </div>
+
+        <div>
+          <h3>Navegación</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contacto</h3>
+          <ul class="footer-links">
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="https://wa.me/?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20vuestros%20productos." target="_blank" rel="noreferrer">WhatsApp</a></li>
+            <li><a href="https://instagram.com/[INSTAGRAM]" target="_blank" rel="noreferrer">Instagram</a></li>
+            <li><a href="mailto:[EMAIL]">[EMAIL]</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© <span id="year"></span> [NOMBRE DE LA MARCA]. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
