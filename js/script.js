@@ -1,23 +1,98 @@
 const products = [
-  { id: 1, nombre: "Corona navideña clásica", precio: 35, categoria: "Coronas", imagen: "img/productos/corona-clasica.svg", descripcion: "Corona decorativa con tonos cálidos y detalle artesanal para la entrada del hogar.", personalizado: true, disponible: true, demo: true },
-  { id: 2, nombre: "Adorno personalizado", precio: 18, categoria: "Personalizados", imagen: "img/productos/adorno-arbol.svg", descripcion: "Adorno para árbol o regalo con una propuesta personalizable en colores y textos.", personalizado: true, disponible: true, demo: true },
-  { id: 3, nombre: "Centro de mesa navideño", precio: 42, categoria: "Centros de mesa", imagen: "img/productos/centro-mesa.svg", descripcion: "Composición decorativa para mesas y rincones con un aire acogedor y elegante.", personalizado: true, disponible: true, demo: true },
-  { id: 4, nombre: "Adorno para árbol", precio: 15, categoria: "Adornos", imagen: "img/productos/adorno-arbol.svg", descripcion: "Adorno artesanal para completar la decoración del árbol con un diseño delicado.", personalizado: false, disponible: true, demo: true },
-  { id: 5, nombre: "Caja regalo navideña", precio: 28, categoria: "Regalos", imagen: "img/productos/caja-regalo.svg", descripcion: "Caja decorativa para regalos con un enfoque navideño y artesanal.", personalizado: true, disponible: false, demo: true },
-  { id: 6, nombre: "Letrero rústico", precio: 30, categoria: "Decoración", imagen: "img/productos/letrero-rustico.svg", descripcion: "Detalle decorativo con estilo rústico para espacios de casa, tiendas o eventos.", personalizado: true, disponible: true, demo: true }
+  {
+    id: "lazo-rojo-dorado-frutos",
+    nombre: "Lazo navideño rojo y dorado con frutos",
+    precio: 24.90,
+    categoria: "Lazos",
+    imagenes: [{ src: "img/productos/producto_1.jpeg", alt: "Lazo grande rojo y dorado con frutos decorativos" }],
+    descripcion: "Lazo navideño grande en tonos rojos y dorados, con frutos y decoración festiva.",
+    personalizado: false,
+    disponible: true
+  },
+  {
+    id: "lazo-variante-rojo-dorado",
+    nombre: "Lazo navideño rojo y dorado, variante",
+    precio: 24.90,
+    categoria: "Lazos",
+    imagenes: [{ src: "img/productos/producto_2.jpeg", alt: "Variante de lazo navideño rojo y dorado con decoración festiva" }],
+    descripcion: "Variante de lazo navideño en tonos rojos y dorados con decoración festiva.",
+    personalizado: false,
+    disponible: true
+  },
+  {
+    id: "lazo-elegante-blanco-dorado",
+    nombre: "Lazo elegante blanco y dorado",
+    precio: 24.90,
+    categoria: "Lazos",
+    imagenes: [{ src: "img/productos/producto_3.jpeg", alt: "Lazo elegante blanco y dorado con decoración navideña" }],
+    descripcion: "Lazo decorativo en tonos blancos y dorados con ramas y detalles festivos.",
+    personalizado: false,
+    disponible: true
+  },
+  {
+    id: "lazo-blanco-ramas-bolas",
+    nombre: "Lazo blanco y dorado con ramas y bolas",
+    precio: 24.90,
+    categoria: "Lazos",
+    imagenes: [{ src: "img/productos/producto_4.jpeg", alt: "Lazo blanco y dorado con ramas verdes y bolas decorativas" }],
+    descripcion: "Lazo blanco y dorado acompañado de ramas verdes y bolas decorativas.",
+    personalizado: false,
+    disponible: true
+  },
+  {
+    id: "lazo-terciopelo-burdeos",
+    nombre: "Lazo grande de terciopelo burdeos",
+    precio: 11.95,
+    categoria: "Lazos",
+    imagenes: [{ src: "img/productos/producto_5.jpeg", alt: "Lazo grande de terciopelo de color burdeos" }],
+    descripcion: "Lazo grande de terciopelo en tono burdeos.",
+    personalizado: false,
+    disponible: true
+  },
+  {
+    id: "lazo-cuadros-escoceses",
+    nombre: "Lazo de cuadros escoceses",
+    precio: 5.90,
+    categoria: "Lazos",
+    imagenes: [{ src: "img/productos/producto_6.jpeg", alt: "Lazo navideño de cuadros escoceses rojos y verdes" }],
+    descripcion: "Lazo de cuadros escoceses en tonos rojos y verdes.",
+    personalizado: false,
+    disponible: true
+  },
+  {
+    id: "pack-lazos-pequenos-burdeos",
+    nombre: "Pack de 3 lazos pequeños burdeos",
+    precio: 12.90,
+    categoria: "Lazos",
+    imagenes: [{ src: "img/productos/producto_7.jpeg", alt: "Pack de tres lazos pequeños de color burdeos" }],
+    descripcion: "Conjunto de tres lazos pequeños de terciopelo burdeos.",
+    personalizado: false,
+    disponible: true
+  },
+  {
+    id: "centro-decorativo-invernal",
+    nombre: "Centro decorativo blanco, verde y dorado",
+    precio: 14.99,
+    categoria: "Centros de mesa",
+    imagenes: [{ src: "img/productos/producto_8.jpeg", alt: "Centro decorativo con follaje verde, detalles blancos y piñas" }],
+    descripcion: "Centro decorativo con follaje verde, detalles claros y piñas en una maceta.",
+    personalizado: false,
+    disponible: true
+  }
 ];
 
-const galleryImages = [
-  { src: "img/galeria/galeria-1.svg", alt: "Detalle de una decoración festiva hecha a mano" },
-  { src: "img/galeria/galeria-2.svg", alt: "Adorno artesanal con estilo navideño" },
-  { src: "img/galeria/galeria-3.svg", alt: "Detalle de un centro de mesa artesanal" },
-  { src: "img/galeria/galeria-4.svg", alt: "Producto decorativo hecho manualmente" },
-  { src: "img/galeria/galeria-1.svg", alt: "Conjunto de detalles navideños artesanales" },
-  { src: "img/galeria/galeria-2.svg", alt: "Material y trabajo artesanal durante la creación" }
-];
+const galleryImages = products.flatMap((product) =>
+  product.imagenes.map((image) => ({ ...image }))
+);
 
-const whatsappNumber = "[NUMERO WHATSAPP]";
-const whatsappBaseUrl = `https://wa.me/${whatsappNumber}`;
+const whatsappNumber = "34624527625";
+const whatsappBaseUrl = /^\d{8,15}$/.test(whatsappNumber) ? `https://wa.me/${whatsappNumber}` : null;
+const shippingThresholdCents = 5000;
+const deliveryOptions = {
+  inpost: { label: "Entrega en Locker o Punto Pack de InPost", priceCents: 590 },
+  home: { label: "Entrega a domicilio", priceCents: 790 },
+  pickup: { label: "Recogida en Valencia", priceCents: 0 }
+};
 const catalogState = {
   activeCategory: "Todas",
   searchQuery: "",
@@ -25,14 +100,209 @@ const catalogState = {
   availableOnly: false,
   favoritesOnly: false,
 };
-
-function createWhatsAppLink(productName) {
-  const message = encodeURIComponent(`Hola, estoy interesado/a en ${productName}. ¿Podríais darme más información?`);
-  return `${whatsappBaseUrl}?text=${message}`;
-}
+const cartState = { items: [], delivery: "inpost" };
 
 function formatPrice(price) {
-  return `${price.toFixed(2).replace(".00", "")} €`;
+  return new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" }).format(price);
+}
+
+function productImage(product, index = 0) {
+  return product.imagenes[index] || product.imagenes[0];
+}
+
+function readCart() {
+  try {
+    const savedCart = JSON.parse(localStorage.getItem("mama-carrito") || "{}");
+    const validIds = new Set(products.map((product) => product.id));
+    const items = Array.isArray(savedCart.items)
+      ? savedCart.items
+        .filter((item) => validIds.has(item.id) && Number.isInteger(item.quantity) && item.quantity > 0)
+        .map((item) => ({ id: item.id, quantity: item.quantity }))
+      : [];
+    const delivery = Object.prototype.hasOwnProperty.call(deliveryOptions, savedCart.delivery)
+      ? savedCart.delivery
+      : "inpost";
+    return { items, delivery };
+  } catch (error) {
+    console.error("No se pudo leer el carrito guardado.", error);
+    return { items: [], delivery: "inpost" };
+  }
+}
+
+function saveCart() {
+  try {
+    localStorage.setItem("mama-carrito", JSON.stringify(cartState));
+  } catch (error) {
+    console.error("No se pudo guardar el carrito.", error);
+  }
+}
+
+function cartSubtotalCents() {
+  return cartState.items.reduce((subtotal, item) => {
+    const product = products.find((entry) => entry.id === item.id);
+    return product ? subtotal + Math.round(product.precio * 100) * item.quantity : subtotal;
+  }, 0);
+}
+
+function cartShippingCents(subtotalCents = cartSubtotalCents()) {
+  if (cartState.items.length === 0) return 0;
+  if (cartState.delivery === "pickup" || subtotalCents >= shippingThresholdCents) return 0;
+  return deliveryOptions[cartState.delivery].priceCents;
+}
+
+function addToCart(productId) {
+  const product = products.find((item) => item.id === productId);
+  if (!product || !product.disponible) return;
+
+  const cartItem = cartState.items.find((item) => item.id === productId);
+  if (cartItem) {
+    cartItem.quantity += 1;
+  } else {
+    cartState.items.push({ id: productId, quantity: 1 });
+  }
+
+  saveCart();
+  renderCart();
+}
+
+function updateCartQuantity(productId, change) {
+  const cartItem = cartState.items.find((item) => item.id === productId);
+  if (!cartItem) return;
+
+  cartItem.quantity += change;
+  if (cartItem.quantity <= 0) {
+    cartState.items = cartState.items.filter((item) => item.id !== productId);
+  }
+
+  saveCart();
+  renderCart();
+}
+
+function removeFromCart(productId) {
+  cartState.items = cartState.items.filter((item) => item.id !== productId);
+  saveCart();
+  renderCart();
+}
+
+function orderWhatsAppUrl(customer) {
+  if (!whatsappBaseUrl || cartState.items.length === 0) return null;
+
+  const subtotal = cartSubtotalCents();
+  const shipping = cartShippingCents(subtotal);
+  const isFreeShipping = subtotal >= shippingThresholdCents;
+  const deliveryDetails = cartState.delivery === "inpost"
+    ? `Punto InPost: ${customer.deliveryDetails}`
+    : cartState.delivery === "home"
+      ? `Dirección: ${customer.deliveryDetails}`
+      : null;
+  const lines = cartState.items.map((item) => {
+    const product = products.find((entry) => entry.id === item.id);
+    return `🎀 ${product.nombre} x${item.quantity} — ${formatPrice(product.precio)}`;
+  });
+  const message = [
+    "Hola, quiero realizar este pedido:",
+    "",
+    `Nombre: ${customer.name}`,
+    `Teléfono: ${customer.phone}`,
+    ...(deliveryDetails ? [deliveryDetails] : []),
+    "",
+    ...lines,
+    "",
+    `Subtotal: ${formatPrice(subtotal / 100)}`,
+    `🚚 Entrega: ${deliveryOptions[cartState.delivery].label}`,
+    `Envío: ${shipping === 0 ? "GRATIS" : formatPrice(shipping / 100)}`,
+    ...(isFreeShipping ? ["🎁 ¡Envío GRATIS!"] : []),
+    `TOTAL: ${formatPrice((subtotal + shipping) / 100)}`,
+    "",
+    "Gracias."
+  ].join("\n");
+
+  return `${whatsappBaseUrl}?text=${encodeURIComponent(message)}`;
+}
+
+function renderCart() {
+  const cartLines = document.getElementById("cart-lines");
+  if (!cartLines) return;
+
+  const subtotal = cartSubtotalCents();
+  const shipping = cartShippingCents(subtotal);
+  const itemCount = cartState.items.reduce((total, item) => total + item.quantity, 0);
+  const cartEmpty = document.getElementById("cart-empty");
+  const countElement = document.getElementById("cart-count");
+  const orderButton = document.getElementById("whatsapp-order");
+  const guestCheckout = document.getElementById("guest-checkout");
+  const setupNote = document.getElementById("whatsapp-config-note");
+  const shippingMessage = document.getElementById("shipping-message");
+  const isFreeShipping = subtotal >= shippingThresholdCents;
+
+  cartLines.innerHTML = cartState.items.map((item) => {
+    const product = products.find((entry) => entry.id === item.id);
+    if (!product) return "";
+    return `
+      <article class="cart-item">
+        <img src="${productImage(product).src}" alt="${productImage(product).alt}" />
+        <div class="cart-item__details">
+          <h4>${product.nombre}</h4>
+          <span>${formatPrice(product.precio)} cada uno</span>
+          <div class="cart-item__controls" aria-label="Cantidad de ${product.nombre}">
+            <button type="button" data-cart-action="decrease" data-product-id="${product.id}" aria-label="Quitar una unidad de ${product.nombre}">−</button>
+            <span>${item.quantity}</span>
+            <button type="button" data-cart-action="increase" data-product-id="${product.id}" aria-label="Añadir una unidad de ${product.nombre}">+</button>
+            <button type="button" class="cart-item__remove" data-cart-action="remove" data-product-id="${product.id}">Eliminar</button>
+          </div>
+        </div>
+        <strong>${formatPrice(Math.round(product.precio * 100) * item.quantity / 100)}</strong>
+      </article>
+    `;
+  }).join("");
+
+  if (cartEmpty) cartEmpty.hidden = itemCount > 0;
+  if (countElement) countElement.textContent = String(itemCount);
+  document.getElementById("cart-subtotal").textContent = formatPrice(subtotal / 100);
+  document.getElementById("cart-shipping").textContent = shipping === 0 ? "GRATIS" : formatPrice(shipping / 100);
+  document.getElementById("cart-total").textContent = formatPrice((subtotal + shipping) / 100);
+  document.getElementById("inpost-price").textContent = isFreeShipping ? "GRATIS" : formatPrice(deliveryOptions.inpost.priceCents / 100);
+  document.getElementById("home-price").textContent = isFreeShipping ? "GRATIS" : formatPrice(deliveryOptions.home.priceCents / 100);
+
+  if (shippingMessage) {
+    if (itemCount === 0) {
+      shippingMessage.textContent = "Añade productos: a partir de 50,00 € el envío es gratis. La recogida en Valencia siempre es gratuita.";
+      shippingMessage.classList.remove("shipping-message--free");
+    } else if (isFreeShipping) {
+      shippingMessage.textContent = "🎁 ¡Envío GRATIS!";
+      shippingMessage.classList.add("shipping-message--free");
+    } else {
+      const remaining = (shippingThresholdCents - subtotal) / 100;
+      shippingMessage.textContent = cartState.delivery === "pickup"
+        ? `La recogida en Valencia es gratuita. Te faltan ${formatPrice(remaining)} para conseguir envío GRATIS con InPost o a domicilio.`
+        : `Te faltan ${formatPrice(remaining)} para conseguir envío GRATIS.`;
+      shippingMessage.classList.remove("shipping-message--free");
+    }
+  }
+
+  document.querySelectorAll('input[name="delivery-method"]').forEach((radio) => {
+    radio.checked = radio.value === cartState.delivery;
+  });
+  if (orderButton) orderButton.disabled = itemCount === 0 || !whatsappBaseUrl;
+  if (guestCheckout) guestCheckout.hidden = itemCount === 0;
+  if (setupNote) setupNote.hidden = Boolean(whatsappBaseUrl);
+  syncGuestDeliveryFields();
+}
+
+function syncGuestDeliveryFields() {
+  const inpostDetails = document.getElementById("inpost-details");
+  const inpostLocation = document.getElementById("inpost-location");
+  const homeDetails = document.getElementById("home-details");
+  const homeAddress = document.getElementById("home-address");
+
+  if (!inpostDetails || !inpostLocation || !homeDetails || !homeAddress) return;
+
+  const inpostSelected = cartState.delivery === "inpost";
+  const homeSelected = cartState.delivery === "home";
+  inpostDetails.hidden = !inpostSelected;
+  inpostLocation.required = inpostSelected;
+  homeDetails.hidden = !homeSelected;
+  homeAddress.required = homeSelected;
 }
 
 function getFavorites() {
@@ -72,7 +342,7 @@ function renderFeaturedProducts() {
   container.innerHTML = featured.map((product) => `
     <article class="product-card reveal">
       <div class="product-card__image">
-        <img src="${product.imagen}" alt="${product.nombre}" loading="lazy" />
+        <img src="${productImage(product).src}" alt="${productImage(product).alt}" loading="lazy" />
       </div>
       <div class="product-card__body">
         <div class="product-card__head">
@@ -85,7 +355,7 @@ function renderFeaturedProducts() {
         </div>
         <p class="product-card__description">${product.descripcion}</p>
         <div class="product-card__actions">
-          <a href="${createWhatsAppLink(product.nombre)}" class="btn btn--primary" target="_blank" rel="noreferrer">Pedir por WhatsApp</a>
+          <a href="productos.html#product-grid" class="btn btn--primary">Ver en catálogo</a>
         </div>
       </div>
     </article>
@@ -151,13 +421,15 @@ function renderProducts(category = "Todas") {
 
   container.innerHTML = filteredProducts.map((product) => {
     const favorite = isFavorite(product.id);
+    const firstImage = productImage(product);
     return `
       <article class="product-card reveal">
         <button type="button" class="favorite-btn ${favorite ? "is-active" : ""}" data-favorite-id="${product.id}" aria-label="${favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" title="${favorite ? "Quitar de favoritos" : "Añadir a favoritos"}">
           ♥
         </button>
         <div class="product-card__image">
-          <img src="${product.imagen}" alt="${product.nombre}" loading="lazy" />
+          <img src="${firstImage.src}" alt="${firstImage.alt}" loading="lazy" data-product-image="${product.id}" data-image-index="0" />
+          ${product.imagenes.length > 1 ? `<button type="button" class="product-image-next" data-gallery-id="${product.id}" aria-label="Ver otra foto de ${product.nombre}">Ver otra foto</button>` : ""}
         </div>
         <div class="product-card__body">
           <div class="product-card__head">
@@ -166,12 +438,12 @@ function renderProducts(category = "Todas") {
           </div>
           <div class="product-card__meta">
             <span class="meta-pill">${product.categoria}</span>
-            <span class="meta-pill ${product.personalizado ? "meta-pill--warning" : ""}">${product.personalizado ? "Personalizable" : "No personalizado"}</span>
+            <span class="meta-pill ${product.personalizado ? "meta-pill--warning" : ""}">${product.personalizado ? "Personalizable" : "Hecho a mano"}</span>
           </div>
           <p class="product-card__description">${product.descripcion}</p>
           <div class="product-card__actions">
-            <a href="${createWhatsAppLink(product.nombre)}" class="btn btn--primary" target="_blank" rel="noreferrer">Pedir por WhatsApp</a>
-            <button type="button" class="btn btn--secondary btn--small" data-customize-id="${product.id}">Personalizar</button>
+            <button type="button" class="btn btn--primary" data-add-to-cart="${product.id}">Añadir al carrito</button>
+            <button type="button" class="btn btn--secondary btn--small" data-customize-id="${product.id}">Consultar opciones</button>
           </div>
           <span class="product-card__status ${product.disponible ? "product-card__status--available" : "product-card__status--unavailable"}">${product.disponible ? "Disponible" : "Próximamente"}</span>
         </div>
@@ -194,13 +466,13 @@ function renderFavoritesList() {
 
   container.innerHTML = favorites.map((product) => `
     <article class="favorite-item">
-      <img src="${product.imagen}" alt="${product.nombre}" loading="lazy" />
+      <img src="${productImage(product).src}" alt="${productImage(product).alt}" loading="lazy" />
       <div>
         <h3>${product.nombre}</h3>
         <p>${product.descripcion}</p>
         <div class="favorite-item__meta">
           <span>${formatPrice(product.precio)}</span>
-          <a href="${createWhatsAppLink(product.nombre)}" target="_blank" rel="noreferrer">Pedir por WhatsApp</a>
+          <a href="productos.html#product-grid">Ver en catálogo</a>
         </div>
       </div>
     </article>
@@ -291,6 +563,12 @@ function initializeContactForm() {
     }
 
     const encodedMessage = encodeURIComponent(`Hola, me llamo ${name}. Estoy interesada/o en información sobre tus productos. ${text}. Mi email es ${email}.`);
+    if (!whatsappBaseUrl) {
+      messageBox.textContent = "Los pedidos por WhatsApp todavía no están configurados. Contacta con el negocio por otro medio.";
+      messageBox.className = "form-message form-message--error";
+      return;
+    }
+
     window.open(`${whatsappBaseUrl}?text=${encodedMessage}`, "_blank");
     messageBox.textContent = "Se abrirá WhatsApp con tu mensaje preparado.";
     messageBox.className = "form-message form-message--success";
@@ -399,7 +677,7 @@ function initializeProductModal() {
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const productId = Number(form.dataset.productId);
+    const productId = form.dataset.productId;
     const product = products.find((item) => item.id === productId);
 
     if (!product) {
@@ -418,7 +696,12 @@ function initializeProductModal() {
       return;
     }
 
-    const text = encodeURIComponent(`Hola, me gustaría personalizar ${product.nombre}. Nombre: ${name}. Color o tono deseado: ${color || "No especificado"}. Cantidad: ${quantity}. Detalles: ${details || "Sin detalles adicionales"}.`);
+    if (!whatsappBaseUrl) {
+      document.getElementById("customizer-alert").textContent = "El número de WhatsApp de pedidos todavía no está configurado.";
+      return;
+    }
+
+    const text = encodeURIComponent(`Hola, quisiera consultar opciones para ${product.nombre}. Nombre: ${name}. Color o detalle deseado: ${color || "No especificado"}. Cantidad: ${quantity}. Detalles: ${details || "Sin detalles adicionales"}.`);
     window.open(`${whatsappBaseUrl}?text=${text}`, "_blank");
     closeModal();
     form.reset();
@@ -434,7 +717,7 @@ function openCustomization(productId) {
   if (!modal || !form || !title || !fieldsContainer || !product) return;
 
   form.dataset.productId = String(productId);
-  title.textContent = `Personaliza: ${product.nombre}`;
+  title.textContent = `Consulta opciones: ${product.nombre}`;
   fieldsContainer.innerHTML = `
     <div class="field-group">
       <label for="customizer-name">Tu nombre</label>
@@ -468,14 +751,76 @@ function initializeProductCardInteractions() {
   productGrid.addEventListener("click", (event) => {
     const favoriteButton = event.target.closest("[data-favorite-id]");
     const customizeButton = event.target.closest("[data-customize-id]");
+    const addButton = event.target.closest("[data-add-to-cart]");
+    const galleryButton = event.target.closest("[data-gallery-id]");
 
     if (favoriteButton) {
-      toggleFavorite(Number(favoriteButton.dataset.favoriteId));
+      toggleFavorite(favoriteButton.dataset.favoriteId);
     }
 
     if (customizeButton) {
-      openCustomization(Number(customizeButton.dataset.customizeId));
+      openCustomization(customizeButton.dataset.customizeId);
     }
+
+    if (addButton) {
+      addToCart(addButton.dataset.addToCart);
+    }
+
+    if (galleryButton) {
+      const product = products.find((item) => item.id === galleryButton.dataset.galleryId);
+      const image = product && productGrid.querySelector(`[data-product-image="${product.id}"]`);
+      if (product && image) {
+        const nextIndex = (Number(image.dataset.imageIndex) + 1) % product.imagenes.length;
+        const nextImage = productImage(product, nextIndex);
+        image.src = nextImage.src;
+        image.alt = nextImage.alt;
+        image.dataset.imageIndex = String(nextIndex);
+      }
+    }
+  });
+}
+
+function initializeCart() {
+  const cartSection = document.getElementById("cart-lines");
+  if (!cartSection) return;
+
+  const savedCart = readCart();
+  cartState.items = savedCart.items;
+  cartState.delivery = savedCart.delivery;
+  renderCart();
+
+  document.querySelectorAll('input[name="delivery-method"]').forEach((radio) => {
+    radio.addEventListener("change", () => {
+      if (!radio.checked) return;
+      cartState.delivery = radio.value;
+      saveCart();
+      renderCart();
+    });
+  });
+
+  cartSection.addEventListener("click", (event) => {
+    const cartButton = event.target.closest("[data-cart-action]");
+    if (!cartButton) return;
+
+    const productId = cartButton.dataset.productId;
+    if (cartButton.dataset.cartAction === "increase") updateCartQuantity(productId, 1);
+    if (cartButton.dataset.cartAction === "decrease") updateCartQuantity(productId, -1);
+    if (cartButton.dataset.cartAction === "remove") removeFromCart(productId);
+  });
+
+  const checkoutForm = document.getElementById("guest-checkout");
+  checkoutForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!checkoutForm.reportValidity()) return;
+
+    const url = orderWhatsAppUrl({
+      name: document.getElementById("customer-name").value.trim(),
+      phone: document.getElementById("customer-phone").value.trim(),
+      deliveryDetails: cartState.delivery === "inpost"
+        ? document.getElementById("inpost-location").value.trim()
+        : document.getElementById("home-address").value.trim()
+    });
+    if (url) window.open(url, "_blank", "noopener,noreferrer");
   });
 }
 
@@ -492,17 +837,17 @@ function initializeRecommendationForm() {
     const occasion = document.getElementById("occasion-choice").value;
 
     const styleMap = {
-      elegante: ["Coronas", "Centros de mesa", "Decoración", "Regalos"],
-      rustico: ["Decoración", "Coronas", "Regalos", "Adornos"],
-      moderno: ["Decoración", "Personalizados", "Adornos", "Coronas"],
-      calido: ["Coronas", "Centros de mesa", "Regalos", "Decoración"]
+      elegante: ["Lazos", "Centros de mesa"],
+      rustico: ["Lazos", "Centros de mesa"],
+      moderno: ["Lazos", "Centros de mesa"],
+      calido: ["Lazos", "Centros de mesa"]
     };
 
     const occasionMap = {
-      casa: ["Decoración", "Centros de mesa", "Coronas"],
-      arbol: ["Adornos", "Personalizados", "Coronas"],
-      regalo: ["Regalos", "Personalizados", "Decoración"],
-      personalizado: ["Personalizados", "Decoración", "Coronas"]
+      casa: ["Lazos", "Centros de mesa"],
+      arbol: ["Lazos"],
+      regalo: ["Lazos", "Centros de mesa"],
+      personalizado: ["Lazos", "Centros de mesa"]
     };
 
     const scored = products
@@ -527,13 +872,13 @@ function initializeRecommendationForm() {
 
     results.innerHTML = scored.map(({ product }) => `
       <article class="recommendation-card">
-        <img src="${product.imagen}" alt="${product.nombre}" loading="lazy" />
+        <img src="${productImage(product).src}" alt="${productImage(product).alt}" loading="lazy" />
         <div>
           <h3>${product.nombre}</h3>
           <p>${product.descripcion}</p>
           <div class="recommendation-card__meta">
             <span>${formatPrice(product.precio)}</span>
-            <a href="${createWhatsAppLink(product.nombre)}" class="btn btn--secondary" target="_blank" rel="noreferrer">Consultar</a>
+            <a href="productos.html#product-grid" class="btn btn--secondary">Ver en catálogo</a>
           </div>
         </div>
       </article>
@@ -590,6 +935,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeNavigation();
   initializeYear();
   initializeLightbox();
+  initializeCart();
   initializeContactForm();
   initializeCatalogControls();
   initializeFilterButtons();

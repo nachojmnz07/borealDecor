@@ -81,12 +81,73 @@
 
           <div class="catalog-summary reveal">
             <span id="result-count" class="result-count">0 productos</span>
+            <a class="cart-shortcut" href="#shopping-cart">Carrito (<span id="cart-count">0</span>)</a>
           </div>
 
           <div id="product-grid" class="cards-grid cards-grid--catalog"></div>
           <p id="no-products" class="empty-state" hidden>
             No hemos encontrado productos que coincidan con tu búsqueda. Prueba con otra palabra o restablece los filtros.
           </p>
+
+          <section id="shopping-cart" class="shopping-cart" aria-labelledby="shopping-cart-title">
+            <div class="section-heading">
+              <p class="eyebrow">Tu pedido</p>
+              <h2 id="shopping-cart-title">Carrito</h2>
+            </div>
+            <p id="cart-empty" class="cart-empty">Tu carrito está vacío. Añade tus favoritos desde el catálogo.</p>
+            <div id="cart-lines" class="cart-lines"></div>
+
+            <div class="cart-checkout">
+              <fieldset class="delivery-options">
+                <legend>Método de entrega</legend>
+                <label class="delivery-option">
+                  <input type="radio" name="delivery-method" value="inpost" checked />
+                  <span>Entrega en Locker o Punto Pack de InPost</span>
+                  <strong id="inpost-price">5,90 €</strong>
+                </label>
+                <label class="delivery-option">
+                  <input type="radio" name="delivery-method" value="home" />
+                  <span>Entrega a domicilio</span>
+                  <strong id="home-price">7,90 €</strong>
+                </label>
+                <label class="delivery-option">
+                  <input type="radio" name="delivery-method" value="pickup" />
+                  <span>Recogida en Valencia</span>
+                  <strong>GRATIS</strong>
+                </label>
+                <p id="shipping-message" class="shipping-message" aria-live="polite"></p>
+              </fieldset>
+
+              <div class="cart-summary">
+                <p><span>Productos</span><strong id="cart-subtotal">0,00 €</strong></p>
+                <p><span>Envío</span><strong id="cart-shipping">5,90 €</strong></p>
+                <p class="cart-summary__total"><span>TOTAL</span><strong id="cart-total">5,90 €</strong></p>
+                <form id="guest-checkout" class="guest-checkout" hidden>
+                  <h3>Datos para el pedido</h3>
+                  <p>Compra como invitado: sin crear cuenta ni contraseña.</p>
+                  <div class="field-group">
+                    <label for="customer-name">Nombre</label>
+                    <input id="customer-name" name="customer-name" type="text" autocomplete="name" required />
+                  </div>
+                  <div class="field-group">
+                    <label for="customer-phone">Teléfono de contacto</label>
+                    <input id="customer-phone" name="customer-phone" type="tel" autocomplete="tel" inputmode="tel" required />
+                  </div>
+                  <div id="inpost-details" class="field-group" hidden>
+                    <label for="inpost-location">Punto de recogida InPost</label>
+                    <textarea id="inpost-location" name="inpost-location" rows="2" placeholder="Nombre o dirección del Locker/Punto Pack" required></textarea>
+                  </div>
+                  <div id="home-details" class="field-group" hidden>
+                    <label for="home-address">Dirección de entrega</label>
+                    <textarea id="home-address" name="home-address" rows="3" placeholder="Calle, número, código postal y localidad" required></textarea>
+                  </div>
+                  <button id="whatsapp-order" class="btn btn--primary" type="submit" disabled>Finalizar pedido por WhatsApp</button>
+                </form>
+                <p id="whatsapp-config-note" class="cart-note">Los pedidos por WhatsApp estarán disponibles cuando se configure el número de contacto.</p>
+                <p id="guest-checkout-note" class="cart-note">Los datos se incluirán en el mensaje de WhatsApp y no se guardan en esta web.</p>
+              </div>
+            </div>
+          </section>
         </div>
       </section>
 
@@ -140,7 +201,7 @@
           <h3>Contacto</h3>
           <ul class="footer-links">
             <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="https://wa.me/?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20vuestros%20productos." target="_blank" rel="noreferrer">WhatsApp</a></li>
+            <li><a href="https://wa.me/34624527625?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20vuestros%20productos." target="_blank" rel="noreferrer">WhatsApp</a></li>
             <li><a href="https://instagram.com/[INSTAGRAM]" target="_blank" rel="noreferrer">Instagram</a></li>
             <li><a href="mailto:[EMAIL]">[EMAIL]</a></li>
           </ul>

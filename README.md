@@ -18,18 +18,10 @@ Proyecto web estático para presentar un pequeño negocio artesanal de manualida
 │   └── script.js
 ├── img/
 │   ├── logo/
-│   │   └── logo-placeholder.svg
 │   ├── productos/
-│   │   ├── corona-clasica.svg
-│   │   ├── adorno-arbol.svg
-│   │   ├── centro-mesa.svg
-│   │   ├── caja-regalo.svg
-│   │   └── letrero-rustico.svg
-│   └── galeria/
-│       ├── galeria-1.svg
-│       ├── galeria-2.svg
-│       ├── galeria-3.svg
-│       └── galeria-4.svg
+│   │   ├── producto_1.jpeg ... producto_8.jpeg
+│   │   └── ilustraciones SVG
+│   └── galeria/ (ilustraciones SVG)
 └──
 ```
 
@@ -51,38 +43,34 @@ http://localhost:8000
 
 ## Personalizar los productos
 
-Todos los productos están definidos en el archivo [js/script.js](js/script.js). Modifica el array `products` para añadir, cambiar o eliminar elementos.
+Todos los productos y sus imágenes están definidos en el archivo [js/script.js](js/script.js). Modifica el array `products` para añadir, cambiar o eliminar elementos. El carrito guarda sus artículos y el método de entrega en el navegador. El checkout es como invitado, no requiere cuenta: pide nombre y teléfono, además del punto InPost o dirección si corresponde. Los datos de contacto solo se envían en el mensaje de WhatsApp y no se guardan en el navegador.
 
 Ejemplo:
 
 ```js
 const products = [
   {
+    id: "nuevo-producto",
     nombre: "Nuevo producto",
-    precio: 25,
-    categoria: "Adornos",
-    imagen: "img/productos/mi-producto.svg",
+    precio: 25.00,
+    categoria: "Lazos",
+    imagenes: [{ src: "img/productos/producto-nuevo.jpeg", alt: "Descripción de la imagen" }],
     descripcion: "Descripción del producto.",
-    personalizado: true,
-    disponible: true,
-    demo: true
+    personalizado: false,
+    disponible: true
   }
 ];
 ```
 
 ## Cambiar el número de WhatsApp
 
-1. En [js/script.js](js/script.js), cambia el valor de:
+En [js/script.js](js/script.js), cambia el valor de:
 
 ```js
-const whatsappNumber = "[NUMERO WHATSAPP]";
+const whatsappNumber = "34624527625";
 ```
 
-2. Sustituye el placeholder por el número real, por ejemplo:
-
-```js
-const whatsappNumber = "34612345678";
-```
+Usa el formato internacional, solo con dígitos y con prefijo de país (por ejemplo, `34612345678`). El número del negocio ya está configurado.
 
 ## Cambiar Instagram
 
@@ -108,11 +96,11 @@ Busca en todas las páginas el texto:
 
 y sustituye por una dirección real de correo.
 
-## Sustituir imágenes
+## Imágenes y envíos
 
-Puedes reemplazar cualquier imagen de la carpeta [img](img) por tus fotografías reales.
+Las fotos del catálogo se guardan en [img/productos](img/productos) y sus rutas/textos ALT se configuran dentro de cada producto en [js/script.js](js/script.js). El carrito permite elegir InPost, entrega a domicilio o recogida en Valencia; InPost y domicilio son gratis a partir de 50 € y la recogida es siempre gratuita.
 
-Recuerda mantener el mismo nombre para que no tengas que cambiar el código, o editar la ruta en el array de productos o en la galeria.
+Actualiza la ruta y el texto ALT en el array de productos al cambiar una foto.
 
 ## Cambiar colores y textos
 
@@ -125,12 +113,8 @@ Recuerda mantener el mismo nombre para que no tengas que cambiar el código, o e
 La web está pensada para que el cliente complete lo siguiente:
 
 - Nombre de la marca
-- Número de WhatsApp real
 - Instagram
 - Email
-- Fotografías reales
-- Productos definitivos
-- Precios definitivos
 - Historia exacta del negocio
 
 ## Evolución futura
@@ -138,11 +122,6 @@ La web está pensada para que el cliente complete lo siguiente:
 Esta versión deja preparado el camino para:
 
 - añadir una base de datos y un panel de administración,
-- introducir un carrito de compra,
 - crear una tienda online completa,
 - gestionar stock y pedidos,
 - ampliar el catálogo y la sección de servicios.
-
-## Notas
-
-Todos los productos actuales son DEMO y están marcados como ejemplo para visualizar la estructura del catálogo.
