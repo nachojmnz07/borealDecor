@@ -1,4 +1,4 @@
-# [NOMBRE DE LA MARCA]
+# Boreal
 
 Proyecto web estático para presentar un pequeño negocio artesanal de manualidades y decoración navideña hechas a mano.
 
@@ -17,6 +17,8 @@ Proyecto web estático para presentar un pequeño negocio artesanal de manualida
 ├── js/
 │   └── script.js
 ├── img/
+│   ├── logo.png
+│   ├── titulo.png (referencia visual de la identidad)
 │   ├── logo/
 │   ├── productos/
 │   │   ├── producto_1.jpeg ... producto_8.jpeg
@@ -106,13 +108,13 @@ Actualiza la ruta y el texto ALT en el array de productos al cambiar una foto.
 
 - Los colores principales están definidos en [css/styles.css](css/styles.css) dentro de `:root`.
 - Los textos principales se editan desde cada archivo HTML.
-- Los textos de marca, placeholder y llamada a la acción están marcados con corchetes para facilitar la edición.
+- La marca es Boreal y su lema, «Hecho a mano entre lazos & pinos», aparece junto al logotipo en cabeceras y pies.
+- El nombre se presenta como texto HTML; el archivo `img/titulo.png` se usa solo como referencia visual.
 
 ## Qué falta por definir
 
 La web está pensada para que el cliente complete lo siguiente:
 
-- Nombre de la marca
 - Instagram
 - Email
 - Historia exacta del negocio
